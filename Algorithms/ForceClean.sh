@@ -1,0 +1,1 @@
+#!/bin/bash # Deletes recursively all obj and bin folders. Doing the Visual Studio Clean command, but better.# Before running this script, launch the following command for this file# chmod 700 ./ForceClean.sh# it will make this script file executablefind . -iname "bin" -print0 | xargs -0 rm -rffind . -iname "obj" -print0 | xargs -0 rm -rf
