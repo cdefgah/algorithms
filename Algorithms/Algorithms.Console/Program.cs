@@ -1,4 +1,4 @@
-﻿namespace Cdefgah.Algorithms.ConsoleRunner;
+﻿namespace Cdefgah.Algorithms.Console;
 
 internal class Program
 {
