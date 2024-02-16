@@ -1,3 +1,4 @@
 # Sorting Algorithms
 
-[Bubble sort](./BubbleSort.md)
+* [Bubble Sort](./BubbleSort.md)
+* [Insertion Sort](./InsertionSort.md)

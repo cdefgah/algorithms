@@ -38,5 +38,10 @@ internal class SomeEntitySorterTestData : TheoryData<IList<SE?>, IList<SE?>>
 
         Add([entity4, entity3, entity1, entity2], [entity1, entity2, entity3, entity4]);
         Add([entity4, entity2, entity4, entity4, entity3, entity1, entity2], [entity1, entity2, entity2, entity3, entity4, entity4, entity4]);
+
+        SE entity5 = new(null, "aA");
+        SE entity6 = new(1, "Aa");
+        SE entity7 = new(1, "aA");
+        Add([entity7, entity5, entity6], [entity5, entity6, entity7]);
     }
 }
