@@ -61,4 +61,4 @@ public interface ISorter<T> where T : IComparable<T>
 
 ## Source code reference
 
-Bubble Sort algorithm implementation: [SortingAlgorithms/BubbleSorter.cs](../../Algorithms/SortingAlgorithms/BubbleSorter.cs)
+[Bubble Sort algorithm implementation](../../Algorithms/SortingAlgorithms/BubbleSorter.cs)

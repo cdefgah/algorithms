@@ -6,7 +6,7 @@ public sealed class InsertionSorter<T> : ISorter<T> where T : IComparable<T>
 {
     public void Sort(IList<T?> array)
     {
-        // We start with 1, because we compare the current element with the previous one.
+        // We start with the second element with i = 1, because we compare the current element with the previous one.
         for (int i = 1; i < array.Count; i++)
         {
             T? currentValue = array[i];
