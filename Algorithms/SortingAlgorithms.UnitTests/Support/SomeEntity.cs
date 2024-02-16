@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents an entity with a comparable int value and a string value for test scripts.
 /// </summary>
-internal sealed class SomeEntity : IComparable<SomeEntity>, IEquatable<SomeEntity>
+public sealed class SomeEntity : IComparable<SomeEntity>, IEquatable<SomeEntity>
 {
     public SomeEntity(int? firstValue, string? secondValue)
     {
