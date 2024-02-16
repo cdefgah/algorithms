@@ -51,6 +51,6 @@ public interface ISorter<T> where T : IComparable<T>
 }
 ```
 
-## Source code references
+## Source code reference
 
-* [Insertion Sort algorithm implementation](../../Algorithms/SortingAlgorithms/InsertionSorter.cs)
+[Insertion Sort algorithm implementation](../../Algorithms/SortingAlgorithms/InsertionSorter.cs)
