@@ -9,5 +9,5 @@
 * [Topological Sort](./TopologicalSort.md)
 * [Cycle Detection](./CycleDetection.md)
 * [Dijkstra's Algorithm](./DijkstrasAlgorithm.md)
-* [Floyd Warshall Algorithm](./FloydWarshallAlgorithm.md)
-
+* [Floyd-Warshall Algorithm](./FloydWarshallAlgorithm.md)
+  
