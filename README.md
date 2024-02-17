@@ -4,3 +4,4 @@ This repository contains various implementations of classic computer science alg
 
 * [Sorting Algorithms](./Documentation/Sorting%20Algorithms/README.md)
 * [Graph Algorithms](./Documentation/Graph%20Algorithms/README.md)
+* [Search Algorithms](./Documentation/Search%20Algorithms/README.md)
