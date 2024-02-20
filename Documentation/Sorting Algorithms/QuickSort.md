@@ -45,6 +45,14 @@ Let's consider two derived classes that implement Lomuto and Hoare partitioning 
 
 ### Sorting with Lomuto partitioning scheme implementation
 
+Algorithm: It works by choosing a pivot (usually the last element in the array) and maintaining an index to store the position of the smaller (or equal) element found so far. As it scans the array from beginning to end, it swaps elements to ensure that at the end, all elements smaller than the pivot are to its left and all larger elements are to its right. Lomuto's partition is easier to understand and implement, which is why it is often found in educational materials.
+
+Performance: Typically less efficient than Hoare's partition because it does more swaps and tends to create unbalanced partitions, especially if the pivot is not near the median, leading to worst-case performance of `O(N^2)` in already sorted arrays or arrays with many duplicates.
+
+Pivot selection: The pivot is typically selected as the last element, which can lead to poor performance for certain inputs.
+
+Recursion handling: The element at the pivot index is at its final sorted position after partitioning. The recursive calls are made for the ranges `(low, p - 1)` and `(p + 1, high)`, where `p` is the pivot index.
+
 ```c#
 public sealed class QuickSorterLomuto<T> : QuickSorterBase<T> where T : IComparable<T>
 {
@@ -220,6 +228,9 @@ QuickSort(array, pivotIndex + 1, high); // pivotIndex + 1 => 4, high = 4; this c
 And we have sorted array: `[3, 5, 7, 9, 18]`.
 
 
+### Sorting with Hoare partitioning scheme implementation
+
+To be done...
 
 
 
