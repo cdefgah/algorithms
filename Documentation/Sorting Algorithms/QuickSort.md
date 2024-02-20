@@ -76,6 +76,7 @@ Let's look at the `Partition` method for the `Lomuto` partitioning scheme step b
 Suppose we have an initial array with five elements: `[9, 3, 5, 18, 7]`.
 
 Step 1. The pivot element is set to the last element in the array: `7`;
+
 Step 2. The index `i` is set to `-1` because `low == 0`;
 
 For-loop, we use it to find the correct index for the pivot element in the array, for `j = 0, 1, 2, 3`.
@@ -112,6 +113,7 @@ Let's examine this call step by step:
 ```
 
 Step 6: low < high, continue running the method;
+
 Step 7: 
 
 ```c#
@@ -121,6 +123,7 @@ Step 7:
 Step into `Partition` method invocation.
 
 Step 8: `pivot = array[high]` => `pivot = array[1]` => `pivot = 5`;
+
 Step 9: `i = low - 1` => `i = 0 - 1` => `i = -1`;
 
 Now, entering for-loop
@@ -141,9 +144,11 @@ We'll perform single iteration, for `j = 0`;
 * #1: `j=0`, `array[j] < pivot` => `3 < 5` => `i++` => `i == 0`, swapping `array[i]` with `array[j]`, as `i` and `j` equal to `0`, this swap does not change the array;
 
 Step 10: `correctedPivotIndex = i + 1` => `correctedPivotIndex = 0 + 1` => `correctedPivotIndex = 1`;
+
 Step 11: Returning `correctedPivotIndex` => returning `1`;
 
 Step 12: `pivotIndex` mentioned on Step 7 will be equal to `1`;
+
 Step 13: Attempting to call:
 
 ```c#
@@ -169,6 +174,7 @@ QuickSort(array, 2 + 1, 4);  // to process sub-array [18, 9]
 ```
 
 Step 14: Initial condition is true (`low < high` => `3 < 4`), processing further;
+
 Step 15:
 
 ```c#
@@ -178,6 +184,7 @@ Step 15:
 Step into `Partition` method invocation.
 
 Step 16: `pivot = array[high]` => `pivot = array[4]` => `pivot = 9`;
+
 Step 17: `i = low - 1` => `i = 3 - 1` => `i = 2`;
 
 Step 19: Now, entering for-loop
@@ -198,6 +205,7 @@ We'll perform single iteration, for `j = 3`;
 * #1: `j=3`, `array[j] > pivot` => `18 > 9` => skipping the iteration;
 
 Step 20: `correctPivotIndex = i + 1` => `correctPivotIndex = 2 + 1` => `correctPivotIndex = 3`;
+
 Step 21: Swap for `array[high]` with `array[correctPivotIndex]` => swap for `array[4]` and `array[3]` => `[3, 5, 7, 18, 9]` => `[3, 5, 7, 9, 18]`;
 
 Step 22: Return `correctPivotIndex` => return `3`;
