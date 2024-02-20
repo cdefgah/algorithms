@@ -156,7 +156,7 @@ Since we have
 ```c#
 if (low < high)
 {
-
+    // process sub-arrays
 }
 ```
 
