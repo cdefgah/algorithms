@@ -95,21 +95,21 @@ Step 5: Returning `correctedPivotIndex`, it is equal to `2`;
 Then the following code is being executed:
 
 ```c#
-     QuickSort(array, low, pivotIndex - 1);
-     QuickSort(array, pivotIndex + 1, high);
+QuickSort(array, low, pivotIndex - 1);
+QuickSort(array, pivotIndex + 1, high);
 ```
 
 We call `QuickSort` with the following parameters:
 
 ```c#
-    QuickSort(array, 0, 2 - 1); // to process sub-array [3, 5]
-    QuickSort(array, 2 + 1, 4);  // to process sub-array [18, 9]
+QuickSort(array, 0, 2 - 1); // to process sub-array [3, 5]
+QuickSort(array, 2 + 1, 4);  // to process sub-array [18, 9]
 ```
 
 Let's examine this call step by step: 
 
 ```c#
-    QuickSort(array, 0, 2 - 1); // to process sub-array [3, 5]
+QuickSort(array, 0, 2 - 1); // to process sub-array [3, 5]
 ```
 
 Step 6: low < high, continue running the method;
@@ -117,7 +117,7 @@ Step 6: low < high, continue running the method;
 Step 7: 
 
 ```c#
-  int pivotIndex = Partition(array, low, high); // low = 0, high = 1 
+int pivotIndex = Partition(array, low, high); // low = 0, high = 1 
 ```
 
 Step into `Partition` method invocation.
@@ -152,8 +152,8 @@ Step 12: `pivotIndex` mentioned on Step 7 will be equal to `1`;
 Step 13: Attempting to call:
 
 ```c#
-     QuickSort(array, low, pivotIndex - 1); // low = 0, pivotIndex - 1 => 0;
-     QuickSort(array, pivotIndex + 1, high); // pivotIndex + 1 => 2, high = 1;
+QuickSort(array, low, pivotIndex - 1); // low = 0, pivotIndex - 1 => 0;
+QuickSort(array, pivotIndex + 1, high); // pivotIndex + 1 => 2, high = 1;
 ```
 
 Since we have 
@@ -213,8 +213,17 @@ Step 22: Return `correctPivotIndex` => return `3`;
 Step 23: Attempting to call:
 
 ```c#
-     QuickSort(array, low, pivotIndex - 1); // low = 3, pivotIndex - 1 => 2; this call will exit without further processing;
-     QuickSort(array, pivotIndex + 1, high); // pivotIndex + 1 => 4, high = 4; this call will exit without further processing;
+QuickSort(array, low, pivotIndex - 1); // low = 3, pivotIndex - 1 => 2; this call will exit without further processing;
+QuickSort(array, pivotIndex + 1, high); // pivotIndex + 1 => 4, high = 4; this call will exit without further processing;
 ```
 
 And we have sorted array: `[3, 5, 7, 9, 18]`.
+
+
+
+
+
+## Source code references
+
+* [QuickSorterBase class](../../Algorithms/SortingAlgorithms/Base/QuickSorterBase.cs)
+* [QuickSorterLomuto class](../../Algorithms/SortingAlgorithms/QuickSorterLomuto.cs)
