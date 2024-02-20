@@ -81,8 +81,8 @@ Step 2. The index `i` is set to `-1` because `low == 0`;
 For-loop, we use it to find the correct index for the pivot element in the array, for `j = 0, 1, 2, 3`.
 
 * #1: `j=0`, `array[j] > pivot`, going to next iteration; 
-* #2: `j=1`, `array[j] < pivot`, increment `i`, from `-1` to `0`, and swap `array[i]` and `array[j]` (array[0] and array[1]), as a result we have array: `[3, 9, 5, 18, 7]`;
-* #3: `j=2`, `array[j] < pivot`, increment `i`, from `0` to `1`, and swap `array[i]` and `array[j]` (array[1] and array[2]), as a result we have array: `[3, 5, 9, 18, 7]`;
+* #2: `j=1`, `array[j] < pivot`, increment `i`, from `-1` to `0`, and swap `array[i]` and `array[j]` => (array[0] and array[1]), as a result we have array: `[3, 9, 5, 18, 7]`;
+* #3: `j=2`, `array[j] < pivot`, increment `i`, from `0` to `1`, and swap `array[i]` and `array[j]` => (array[1] and array[2]), as a result we have array: `[3, 5, 9, 18, 7]`;
 * #4: `j=3`, `array[j] > pivot`, going to next iteration;
 
 Step 3: `correctedPivotIndex = i + 1`, as a result we have `correctedPivotIndex = 2`;
@@ -120,6 +120,93 @@ Step 7:
 
 Step into `Partition` method invocation.
 
-Step 8: `pivot = array[high]`, `pivot = array[1]`, `pivot = 5`;
-Step 9: `i = low - 1`, `i = 0 - 1`, `i = -1`;
+Step 8: `pivot = array[high]` => `pivot = array[1]` => `pivot = 5`;
+Step 9: `i = low - 1` => `i = 0 - 1` => `i = -1`;
 
+Now, entering for-loop
+
+```c#
+ for (int j = low; j < high; j++) // j = 0, j < 1, j++
+ {
+     if (Comparer<T>.Default.Compare(array[j], pivot) < 0)
+     {
+         i++;
+         (array[i], array[j]) = (array[j], array[i]);
+     }
+ }
+```
+
+We'll perform single iteration, for `j = 0`;
+
+* #1: `j=0`, `array[j] < pivot` => `3 < 5` => `i++` => `i == 0`, swapping `array[i]` with `array[j]`, as `i` and `j` equal to `0`, this swap does not change the array;
+
+Step 10: `correctedPivotIndex = i + 1` => `correctedPivotIndex = 0 + 1` => `correctedPivotIndex = 1`;
+Step 11: Returning `correctedPivotIndex` => returning `1`;
+
+Step 12: `pivotIndex` mentioned on Step 7 will be equal to `1`;
+Step 13: Attempting to call:
+
+```c#
+     QuickSort(array, low, pivotIndex - 1); // low = 0, pivotIndex - 1 => 0;
+     QuickSort(array, pivotIndex + 1, high); // pivotIndex + 1 => 2, high = 1;
+```
+
+Since we have 
+
+```c#
+if (low < high)
+{
+
+}
+```
+
+condition, both calls will exit without further processing;
+
+Now, let's examine this call step by step (mentioned on Step 5):
+
+```c#
+QuickSort(array, 2 + 1, 4);  // to process sub-array [18, 9]
+```
+
+Step 14: Initial condition is true (`low < high` => `3 < 4`), processing further;
+Step 15:
+
+```c#
+  int pivotIndex = Partition(array, low, high); // low = 3, high = 4 
+```
+
+Step into `Partition` method invocation.
+
+Step 16: `pivot = array[high]` => `pivot = array[4]` => `pivot = 9`;
+Step 17: `i = low - 1` => `i = 3 - 1` => `i = 2`;
+
+Step 19: Now, entering for-loop
+
+```c#
+ for (int j = low; j < high; j++) // j = 3, j < 4, j++
+ {
+     if (Comparer<T>.Default.Compare(array[j], pivot) < 0)
+     {
+         i++;
+         (array[i], array[j]) = (array[j], array[i]);
+     }
+ }
+```
+
+We'll perform single iteration, for `j = 3`;
+
+* #1: `j=3`, `array[j] > pivot` => `18 > 9` => skipping the iteration;
+
+Step 20: `correctPivotIndex = i + 1` => `correctPivotIndex = 2 + 1` => `correctPivotIndex = 3`;
+Step 21: Swap for `array[high]` with `array[correctPivotIndex]` => swap for `array[4]` and `array[3]` => `[3, 5, 7, 18, 9]` => `[3, 5, 7, 9, 18]`;
+
+Step 22: Return `correctPivotIndex` => return `3`;
+
+Step 23: Attempting to call:
+
+```c#
+     QuickSort(array, low, pivotIndex - 1); // low = 3, pivotIndex - 1 => 2; this call will exit without further processing;
+     QuickSort(array, pivotIndex + 1, high); // pivotIndex + 1 => 4, high = 4; this call will exit without further processing;
+```
+
+And we have sorted array: `[3, 5, 7, 9, 18]`.
