@@ -21,14 +21,16 @@ public sealed class InsertionSorter<T> : ISorter<T> where T : IComparable<T>
 {
     public void Sort(IList<T?> array)
     {
-        // We start with 1, because we compare the current element with the previous one.
+        Comparer<T> comparer = Comparer<T>.Default;
+
+        // We start with the second element with i = 1, because we compare the current element with the previous one.
         for (int i = 1; i < array.Count; i++)
         {
             T? currentValue = array[i];
             int index = i;
 
             // Find the position where currentValue should be inserted.
-            while (index > 0 && Comparer<T>.Default.Compare(array[index - 1], currentValue) > 0)
+            while (index > 0 && comparer.Compare(array[index - 1], currentValue) > 0)
             {
                 // Shift values to the right.
                 array[index] = array[index - 1];

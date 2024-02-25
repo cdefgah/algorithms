@@ -9,9 +9,11 @@ public sealed class QuickSorterLomuto<T> : QuickSorterBase<T> where T : ICompara
         T? pivot = array[high];
         int i = (low - 1);
 
+        Comparer<T> comparer = Comparer<T>.Default;
+
         for (int j = low; j < high; j++)
         {
-            if (Comparer<T>.Default.Compare(array[j], pivot) < 0)
+            if (comparer.Compare(array[j], pivot) < 0)
             {
                 i++;
                 (array[i], array[j]) = (array[j], array[i]);
