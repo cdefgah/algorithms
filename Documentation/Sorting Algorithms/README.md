@@ -13,3 +13,8 @@
 ## On Graphs
 
 * [Topological Sort](../Graph%20Algorithms/TopologicalSort.md)
+
+## Tests and benchmarks
+
+* [Unit Tests](../../Algorithms/SortingAlgorithms.UnitTests/)
+* [Benchmarks](../../Algorithms/SortingAlgorithms.Benchmarks/)

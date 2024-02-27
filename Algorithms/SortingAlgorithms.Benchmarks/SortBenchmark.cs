@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿#nullable disable
+using BenchmarkDotNet.Attributes;
 
 namespace Cdefgah.SortingAlgorithms.Benchmarks;
 
