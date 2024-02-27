@@ -8,10 +8,10 @@ There are two different partitioning schemes that can be used in the implementat
 
 ### Recursive Implementations
 
-* [Lomuto peartitioning scheme](./QuickSortLomutoRecursive.md)
-* [Hoare peartitioning scheme](./QuickSortHoareRecursive.md)
+* [Lomuto partitioning scheme](./QuickSortLomutoRecursive.md)
+* [Hoare partitioning scheme](./QuickSortHoareRecursive.md)
 
 ### Non-recursive Implementations
 
-* [Lomuto peartitioning scheme](./QuickSortLomutoNonRecursive.md)
-* [Hoare peartitioning scheme](./QuickSortHoareNonRecursive.md)
+* [Lomuto partitioning scheme](./QuickSortLomutoNonRecursive.md)
+* [Hoare partitioning scheme](./QuickSortHoareNonRecursive.md)
