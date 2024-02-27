@@ -2,7 +2,7 @@
 
 namespace Cdefgah.SortingAlgorithms.UnitTests;
 
-public class QuickSorterLomutoIntTests : IntSorterTestsBase<QuickSorterLomuto<int>>
+public class QuickSorterLomutoRecursiveIntTests : IntSorterTestsBase<QuickSorterLomutoRecursive<int>>
 {
 
 }

@@ -43,6 +43,6 @@ public class SortBenchmark
     public void QuickSortWithLomutoPartitioningSchemaBenchmark()
     {
         var sortedData = (int[])array.Clone();
-        new QuickSorterLomuto<int>().Sort(sortedData);
+        new QuickSorterLomutoRecursive<int>().Sort(sortedData);
     }
 }
