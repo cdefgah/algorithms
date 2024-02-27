@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingAlgorithms", "Sortin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingAlgorithms.UnitTests", "SortingAlgorithms.UnitTests\SortingAlgorithms.UnitTests.csproj", "{A1B7703D-AAEF-4C3B-8868-14F5296EB0F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Console", "Algorithms.Console\Algorithms.Console.csproj", "{8DE0C72E-B712-447F-AA7E-FFD28E510E5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.Console", "Algorithms.Console\Algorithms.Console.csproj", "{8DE0C72E-B712-447F-AA7E-FFD28E510E5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithms.Benchmarks", "SortingAlgorithms.Benchmarks\SortingAlgorithms.Benchmarks.csproj", "{2E81D92F-7665-47D9-BB3B-B960AF1E1928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{8DE0C72E-B712-447F-AA7E-FFD28E510E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DE0C72E-B712-447F-AA7E-FFD28E510E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DE0C72E-B712-447F-AA7E-FFD28E510E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E81D92F-7665-47D9-BB3B-B960AF1E1928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E81D92F-7665-47D9-BB3B-B960AF1E1928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E81D92F-7665-47D9-BB3B-B960AF1E1928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E81D92F-7665-47D9-BB3B-B960AF1E1928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E710A0C4-C3BD-40A0-BEF8-E54D4542153B} = {2CFBD6A6-C58F-4F91-96C5-B055A3B763DD}
 		{A1B7703D-AAEF-4C3B-8868-14F5296EB0F2} = {2CFBD6A6-C58F-4F91-96C5-B055A3B763DD}
+		{2E81D92F-7665-47D9-BB3B-B960AF1E1928} = {2CFBD6A6-C58F-4F91-96C5-B055A3B763DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {130372C8-8103-467C-83C0-75CDC625919D}
