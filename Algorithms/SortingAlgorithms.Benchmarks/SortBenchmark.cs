@@ -40,9 +40,16 @@ public class SortBenchmark
     }
 
     [Benchmark]
-    public void QuickSortWithLomutoPartitioningSchemaBenchmark()
+    public void RecursiveQuickSortWithLomutoPartitioningSchemaBenchmark()
     {
         var sortedData = (int[])array.Clone();
         new QuickSorterLomutoRecursive<int>().Sort(sortedData);
+    }
+
+    [Benchmark]
+    public void NonRecursiveQuickSortWithLomutoPartitioningSchemaBenchmark()
+    {
+        var sortedData = (int[])array.Clone();
+        new QuickSorterLomutoNonRecursive<int>().Sort(sortedData);
     }
 }
