@@ -6,12 +6,22 @@ There are two different partitioning schemes that can be used in the implementat
 
 ## Implementation
 
-### Recursive Implementations
+### Implementations with Lomuto partitioning scheme
 
-* [Lomuto partitioning scheme](./QuickSortLomutoRecursive.md)
-* [Hoare partitioning scheme](./QuickSortHoareRecursive.md)
+Algorithm: It works by choosing a pivot (usually the last element in the array) and maintaining an index to store the position of the smaller (or equal) element found so far. As it scans the array from beginning to end, it swaps elements to ensure that at the end, all elements smaller than the pivot are to its left and all larger elements are to its right. Lomuto's partition is easier to understand and implement, which is why it is often found in educational materials.
 
-### Non-recursive Implementations
+Performance: Typically less efficient than Hoare's partition because it does more swaps and tends to create unbalanced partitions, especially if the pivot is not near the median, leading to worst-case performance of `O(N^2)` in already sorted arrays or arrays with many duplicates.
 
-* [Lomuto partitioning scheme](./QuickSortLomutoNonRecursive.md)
-* [Hoare partitioning scheme](./QuickSortHoareNonRecursive.md)
+Pivot selection: The pivot is typically selected as the last element, which can lead to poor performance for certain inputs.
+
+* [Recursive implementation with Lomuto partitioning scheme](./QuickSortLomutoRecursive.md)
+
+* [Non-Recursive implementation with Lomuto partitioning scheme](./QuickSortLomutoNonRecursive.md)
+
+
+### Implementations with Hoare partitioning scheme
+
+To be done
+
+* [Recursive implementation with Hoare partitioning scheme](./QuickSortHoareRecursive.md)
+* [Non-Recursive implementation with Hoare partitioning scheme](./QuickSortHoareNonRecursive.md)
