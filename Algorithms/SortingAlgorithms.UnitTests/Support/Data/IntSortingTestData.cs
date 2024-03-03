@@ -23,6 +23,7 @@ internal class IntSortingTestData : TheoryData<IList<int>, IList<int>>
         Add([-3, 1, 2], [-3, 1, 2]); // list with three different ordered elements with negative numbers
         Add([-1, 3, -2], [-2, -1, 3]); // list with three different unordered elements with negative numbers
         Add([1, 3, 1, 2], [1, 1, 2, 3]); // Adding a list with non-sequential duplicates
+        Add([1, 3, 1, 2, 1, 3], [1, 1, 1, 2, 3, 3]); // Adding a list with non-sequential duplicates
         Add([0, -2, 0, 5, 0], [-2, 0, 0, 0, 5]); // Adding a list with zeroes
         Add([2, 4, 6, 8, 10], [2, 4, 6, 8, 10]); // Adding a list with a specific pattern
 

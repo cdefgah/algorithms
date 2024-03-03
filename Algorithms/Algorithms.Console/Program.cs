@@ -1,9 +1,17 @@
-﻿namespace Cdefgah.Algorithms.Console;
+﻿using Cdefgah.SortingAlgorithms;
 
-internal class Program
+namespace Cdefgah.Algorithms;
+
+public class Program
 {
     static void Main(string[] args)
     {
-        // for experiments
+        int[] array = [1, 3, 1, 2];
+        QuickSorterHoareRecursive<int> sorter = new();
+        sorter.Sort(array);
+
+        string result = string.Join(',', array);
+
+        Console.WriteLine(result);
     }
 }
