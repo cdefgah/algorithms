@@ -52,4 +52,11 @@ public class SortBenchmark
         var sortedData = (int[])array.Clone();
         new QuickSorterLomutoNonRecursive<int>().Sort(sortedData);
     }
+
+    [Benchmark]
+    public void RecursiveQuickSortWithHoarePartitioningSchemaBenchmark()
+    {
+        var sortedData = (int[])array.Clone();
+        new QuickSorterHoareRecursive<int>().Sort(sortedData);
+    }
 }
