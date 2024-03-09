@@ -12,60 +12,32 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
     protected abstract void QuickSort(IList<T?> array, int low, int high);
 
     public static (int, int) Partition(IList<T?> array, int low, int high)
-    { 
+    {
         Random random = new();
         int pivotIndex = random.Next(low, high + 1);
         T? pivot = array[pivotIndex];
 
-        int i = low;
-        int j = high;
-
-        Comparer<T> comparer = Comparer<T>.Default;
+        int i = low - 1;
+        int j = high + 1;
 
         while (true)
         {
-            while (i < high)
-            {  
-                if (comparer.Compare(pivot, array[i]) < 0)
-                {
-                    break;
-                }
-
+            do
+            {
                 i++;
-            }
+            } while (array[i]?.CompareTo(pivot) < 0);
 
-            while (j > low)
-            {   
-                if (comparer.Compare(array[j], pivot) < 0)
-                {
-                    break;
-                }
-
+            do
+            {
                 j--;
-            }
+            } while (array[j]?.CompareTo(pivot) > 0);
 
             if (i >= j)
             {
-                break;
+                return (j, i);
             }
 
             (array[i], array[j]) = (array[j], array[i]);
-
-            i++;
-            j--;
         }
-
-        if (i < pivotIndex)
-        {
-            (array[i], array[pivotIndex]) = (array[pivotIndex], array[i]);
-            i++;
-        }
-        else if (pivotIndex < j)
-        {
-            (array[pivotIndex], array[j]) = (array[j], array[pivotIndex]);
-            j--;
-        }
-
-        return (i, j);
     }
 }
