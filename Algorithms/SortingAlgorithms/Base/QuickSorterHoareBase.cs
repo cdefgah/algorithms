@@ -20,17 +20,19 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
         int i = low - 1;
         int j = high + 1;
 
+        Comparer<T> comparer = Comparer<T>.Default;
+
         while (true)
         {
             do
             {
                 i++;
-            } while (array[i]?.CompareTo(pivot) < 0);
+            } while (comparer.Compare(array[i], pivot) < 0);
 
             do
             {
                 j--;
-            } while (array[j]?.CompareTo(pivot) > 0);
+            } while (comparer.Compare(array[j],pivot) > 0);
 
             if (i >= j)
             {
