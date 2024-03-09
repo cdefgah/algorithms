@@ -11,7 +11,7 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
 
     protected abstract void QuickSort(IList<T?> array, int low, int high);
 
-    public static (int, int) Partition(IList<T?> array, int low, int high)
+    private static (int, int) Partition(IList<T?> array, int low, int high)
     {
         Random random = new();
         int pivotIndex = random.Next(low, high + 1);
