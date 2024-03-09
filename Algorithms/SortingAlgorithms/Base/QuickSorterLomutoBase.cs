@@ -1,8 +1,17 @@
-﻿namespace Cdefgah.SortingAlgorithms.Base;
+﻿using Cdefgah.SortingAlgorithms.Interfaces;
 
-public abstract class QuickSorterLomutoBase<T> : QuickSorterBase<T> where T : IComparable<T>
+namespace Cdefgah.SortingAlgorithms.Base;
+
+public abstract class QuickSorterLomutoBase<T> : ISorter<T> where T : IComparable<T>
 {
-    protected override int Partition(IList<T?> array, int low, int high)
+    public void Sort(IList<T?> array)
+    {
+        QuickSort(array, 0, array.Count - 1);
+    }
+
+    protected abstract void QuickSort(IList<T?> array, int low, int high);
+
+    protected virtual int Partition(IList<T?> array, int low, int high)
     {
         T? pivot = array[high];
         int i = (low - 1);

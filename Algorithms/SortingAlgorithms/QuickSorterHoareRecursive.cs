@@ -8,10 +8,10 @@ public sealed class QuickSorterHoareRecursive<T> : QuickSorterHoareBase<T> where
     {
         if (low < high)
         {
-            int pivotIndex = Partition(array, low, high);
+            var (i, j) = Partition(array, low, high);
 
-            QuickSort(array, low, pivotIndex - 1);
-            QuickSort(array, pivotIndex + 1, high);
+            QuickSort(array, low, j);
+            QuickSort(array, i, high);
         }
     }
 }
