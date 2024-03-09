@@ -14,18 +14,18 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
     public static (int, int) Partition(IList<T?> array, int low, int high)
     { 
         Random random = new();
-        int pivotIndex = random.Next(low, high + 1); // Adjusted, since high is inclusive 
+        int pivotIndex = random.Next(low, high + 1);
         T? pivot = array[pivotIndex];
 
-        int i = low; // Use low
-        int j = high; // Adjusted, since high is inclusive now
+        int i = low;
+        int j = high;
 
         Comparer<T> comparer = Comparer<T>.Default;
 
         while (true)
         {
             while (i < high)
-            {   // use high
+            {  
                 if (comparer.Compare(pivot, array[i]) < 0)
                 {
                     break;
@@ -35,7 +35,7 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
             }
 
             while (j > low)
-            {   // use low
+            {   
                 if (comparer.Compare(array[j], pivot) < 0)
                 {
                     break;
@@ -44,8 +44,10 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
                 j--;
             }
 
-            if (i >= j) break; // This condition alone is enough to exit
-
+            if (i >= j)
+            {
+                break;
+            }
 
             (array[i], array[j]) = (array[j], array[i]);
 
@@ -53,7 +55,6 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
             j--;
         }
 
-        // Do this only once, after the loop
         if (i < pivotIndex)
         {
             (array[i], array[pivotIndex]) = (array[pivotIndex], array[i]);
