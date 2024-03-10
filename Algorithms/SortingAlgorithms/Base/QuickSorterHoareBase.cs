@@ -21,12 +21,12 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
 
         while (true)
         {
-            while (array[i]?.CompareTo(pivot) < 0)
+            while (comparer.Compare(array[i], pivot) < 0)
             {
                 i++;
             }
 
-            while (array[j]?.CompareTo(pivot) > 0)
+            while (comparer.Compare(array[j], pivot) > 0)
             {
                 j--;
             }
