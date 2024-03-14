@@ -2,7 +2,7 @@
 
 namespace SortingAlgorithms.UnitTests.Support.Data;
 
-internal class SomeEntitySorterTestData : TheoryData<IList<SE?>, IList<SE?>>
+internal sealed class SomeEntitySorterTestData : TheoryData<IList<SE?>, IList<SE?>>
 {
     public SomeEntitySorterTestData()
     {

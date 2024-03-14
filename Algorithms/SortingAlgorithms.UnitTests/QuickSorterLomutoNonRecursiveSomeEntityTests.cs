@@ -3,7 +3,7 @@ using Cdefgah.SortingAlgorithms.UnitTests.Support;
 
 namespace Cdefgah.SortingAlgorithms.UnitTests;
 
-public class QuickSorterLomutoNonRecursiveSomeEntityTests : SomeEntitySorterTestsBase<QuickSorterLomutoNonRecursive<SomeEntity>>
+public sealed class QuickSorterLomutoNonRecursiveSomeEntityTests : SomeEntitySorterTestsBase<QuickSorterLomutoNonRecursive<SomeEntity>>
 {
 
 }

@@ -59,4 +59,11 @@ public class SortBenchmark
         var sortedData = (int[])array.Clone();
         new QuickSorterHoareRecursive<int>().Sort(sortedData);
     }
+
+    [Benchmark]
+    public void NonRecursiveQuickSortWithHoarePartitioningSchemaBenchmark()
+    {
+        var sortedData = (int[])array.Clone();
+        new QuickSorterHoareNonRecursive<int>().Sort(sortedData);
+    }
 }

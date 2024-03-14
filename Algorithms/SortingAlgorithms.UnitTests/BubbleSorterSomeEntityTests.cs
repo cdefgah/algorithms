@@ -3,7 +3,7 @@ using Cdefgah.SortingAlgorithms.UnitTests.Support.Base;
 
 namespace Cdefgah.SortingAlgorithms.UnitTests;
 
-public class BubbleSorterSomeEntityTests : SomeEntitySorterTestsBase<BubbleSorter<SomeEntity>>
+public sealed class BubbleSorterSomeEntityTests : SomeEntitySorterTestsBase<BubbleSorter<SomeEntity>>
 {
 
 }

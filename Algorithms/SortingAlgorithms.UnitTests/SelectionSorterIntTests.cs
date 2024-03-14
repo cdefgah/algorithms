@@ -2,6 +2,6 @@
 
 namespace Cdefgah.SortingAlgorithms.UnitTests;
 
-public class SelectionSorterIntTests : IntSorterTestsBase<SelectionSorter<int>>
+public sealed class SelectionSorterIntTests : IntSorterTestsBase<SelectionSorter<int>>
 {
 }

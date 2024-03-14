@@ -2,6 +2,6 @@
 
 namespace Cdefgah.SortingAlgorithms.UnitTests;
 
-public class BubbleSorterIntTests : IntSorterTestsBase<BubbleSorter<int>>
+public sealed class BubbleSorterIntTests : IntSorterTestsBase<BubbleSorter<int>>
 {
 }

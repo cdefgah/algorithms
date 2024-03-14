@@ -2,7 +2,7 @@
 
 namespace Cdefgah.SortingAlgorithms.UnitTests;
 
-public class QuickSorterHoareRecursiveIntTests : IntSorterTestsBase<QuickSorterHoareRecursive<int>>
+public sealed class QuickSorterHoareRecursiveIntTests : IntSorterTestsBase<QuickSorterHoareRecursive<int>>
 {
 
 }

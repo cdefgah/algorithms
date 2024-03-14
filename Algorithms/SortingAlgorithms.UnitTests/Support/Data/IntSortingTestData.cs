@@ -2,7 +2,7 @@
 
 namespace SortingAlgorithms.UnitTests.Support.Data;
 
-internal class IntSortingTestData : TheoryData<IList<int>, IList<int>>
+internal sealed class IntSortingTestData : TheoryData<IList<int>, IList<int>>
 {
     public IntSortingTestData()
     {
