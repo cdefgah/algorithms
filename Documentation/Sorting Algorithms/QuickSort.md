@@ -6,22 +6,47 @@ There are two different partitioning schemes that can be used in the implementat
 
 ## Implementation
 
-### Implementations with Lomuto partitioning scheme
+### Lomuto partitioning scheme
 
 Algorithm: It works by choosing a pivot (usually the last element in the array) and maintaining an index to store the position of the smaller (or equal) element found so far. As it scans the array from beginning to end, it swaps elements to ensure that at the end, all elements smaller than the pivot are to its left and all larger elements are to its right. Lomuto's partition is easier to understand and implement, which is why it is often found in educational materials.
 
 Performance: Typically less efficient than Hoare's partition because it does more swaps and tends to create unbalanced partitions, especially if the pivot is not near the median, leading to worst-case performance of `O(N^2)` in already sorted arrays or arrays with many duplicates.
 
-Pivot selection: The pivot is typically selected as the last element, which can lead to poor performance for certain inputs.
+#### Time Complexity
 
-* [Recursive implementation with Lomuto partitioning scheme](./QuickSortLomutoRecursive.md)
+Best and Average Case Time Complexity: `O(NlogN)`.
 
-* [Non-Recursive implementation with Lomuto partitioning scheme](./QuickSortLomutoNonRecursive.md)
+Worst Case Time Complexity: `O(N^2)`: This occurs when the smallest or largest element is always chosen as the pivot, leading to highly unbalanced partitions, with one partition containing all the elements except the pivot.
+
+#### Space Complexity
+
+* Recursive: `O(N)` in the worst case due to the recursion stack.
+* Non-Recursive (Iterative): `O(logN)` for the stack data structure used to simulate the recursive calls.
+
+#### Source code reference
+
+* [Recursive implementation with Lomuto partitioning scheme](../../Algorithms/SortingAlgorithms/QuickSorterLomutoRecursive.cs)
+* [Non-recursive implementation with Lomuto partitioning scheme](../../Algorithms/SortingAlgorithms/QuickSorterLomutoNonRecursive.cs)
 
 
-### Implementations with Hoare partitioning scheme
+### Hoare partitioning scheme
 
-To be done
+Algorithm: Hoare's partitioning scheme works by initializing two indexes that start at either end, the two indexes move toward each other until an inversion is found (a smaller value on the left side and a larger value on the right side). When an inversion is found, the two values are swapped and the process is repeated.
 
-* [Recursive implementation with Hoare partitioning scheme](./QuickSortHoareRecursive.md)
-* [Non-Recursive implementation with Hoare partitioning scheme](./QuickSortHoareNonRecursive.md)
+#### Time Complexity
+
+Best and Average Case Time Complexity: `O(NlogN)`
+
+Similar to Lomuto, the pivot splits the array in half, which results in a logarithmic number of partitions. Hoare's partitioning is generally more efficient than Lomuto's because it does fewer swaps and creates more balanced partitions.
+
+Worst Case Time Complexity: `O(N^2)`. Like Lomuto, the worst case occurs when the pivot is the smallest or largest element, causing highly unbalanced partitions.
+
+#### Space Complexity
+
+* Recursive: `O(logN)` in the best and average case, but `O(N)` in the worst case due to the recursion stack.
+* Non-Recursive (Iterative): `O(logN)` for the stack data structure used to simulate the recursive calls.
+
+#### Source code reference
+
+* [Recursive implementation with Hoare partitioning scheme](../../Algorithms/SortingAlgorithms/QuickSorterHoareRecursive.cs)
+* [Non-recursive implementation with Hoare partitioning scheme](../../Algorithms/SortingAlgorithms/QuickSorterHoareNonRecursive.cs)
