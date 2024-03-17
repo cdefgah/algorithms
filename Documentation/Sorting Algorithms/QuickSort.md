@@ -14,13 +14,13 @@ Performance: Typically less efficient than Hoare's partition because it does mor
 
 #### Time Complexity
 
-Best and Average Case Time Complexity: `O(NlogN)`.
+Best and Average Case Time Complexity: `O(NlogN)` when the pivot element are chosen to create balanced partitions.
 
 Worst Case Time Complexity: `O(N^2)`: This occurs when the smallest or largest element is always chosen as the pivot, leading to highly unbalanced partitions, with one partition containing all the elements except the pivot.
 
 #### Space Complexity
 
-* Recursive: `O(N)` in the worst case due to the recursion stack.
+* Recursive: `O(N)` in the worst case due to the deep recursion stack.
 * Non-Recursive (Iterative): `O(logN)` for the stack data structure used to simulate the recursive calls.
 
 #### Source code reference
@@ -35,7 +35,7 @@ Algorithm: Hoare's partitioning scheme works by initializing two indexes that st
 
 #### Time Complexity
 
-Best and Average Case Time Complexity: `O(NlogN)`
+Best and Average Case Time Complexity: `O(NlogN)`.
 
 Similar to Lomuto, the pivot splits the array in half, which results in a logarithmic number of partitions. Hoare's partitioning is generally more efficient than Lomuto's because it does fewer swaps and creates more balanced partitions.
 
@@ -43,8 +43,8 @@ Worst Case Time Complexity: `O(N^2)`. Like Lomuto, the worst case occurs when th
 
 #### Space Complexity
 
-* Recursive: `O(logN)` in the best and average case, but `O(N)` in the worst case due to the recursion stack.
-* Non-Recursive (Iterative): `O(logN)` for the stack data structure used to simulate the recursive calls.
+* Recursive: `O(logN)` in the best and average case, but `O(N)` in the worst case due to the deep recursion stack.
+* Non-Recursive (Iterative): `O(logN)` for the stack data structure used to simulate the recursive calls, `O(N)` for the worst case due to poor pivot choices.
 
 #### Source code reference
 
