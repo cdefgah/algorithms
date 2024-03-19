@@ -66,4 +66,11 @@ public class SortBenchmark
         var sortedData = (int[])array.Clone();
         new QuickSorterHoareNonRecursive<int>().Sort(sortedData);
     }
+
+    [Benchmark]
+    public void MergeSortBenchmark()
+    {
+        var sortedData = (int[])array.Clone();
+        new MergeSorter<int>().Sort(sortedData);
+    }
 }
