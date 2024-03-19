@@ -15,10 +15,10 @@ public class MergeSorter<T> : ISorter<T> where T : IComparable<T>
     {
         if (low < high)
         {
-            int middle = (low + high) / 2;
+            int middle = low + (high - low) / 2; 
             MergeSort(array, helper, low, middle);
             MergeSort(array, helper, middle + 1, high);
-            
+
             Merge(array, helper, low, middle, high);
         }
     }
