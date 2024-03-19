@@ -1,5 +1,4 @@
-﻿#nullable disable
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 
 namespace Cdefgah.SortingAlgorithms.Benchmarks;
 
@@ -9,13 +8,13 @@ public class SortBenchmark
     private int[] array;
 
     [Params(1000, 5000, 10000, 25000)]
-    public int N;
+    public int arrayElementsCount;
 
     [GlobalSetup]
     public void Setup()
     {
         var random = new Random();
-        array = Enumerable.Range(1, N).Select(_ => random.Next()).ToArray();
+        array = Enumerable.Range(1, arrayElementsCount).Select(_ => random.Next()).ToArray();
     }
 
     [Benchmark]
@@ -72,5 +71,12 @@ public class SortBenchmark
     {
         var sortedData = (int[])array.Clone();
         new MergeSorter<int>().Sort(sortedData);
+    }
+
+    [Benchmark]
+    public void ShellSortBenchmark()
+    {
+        var sortedData = (int[])array.Clone();
+        new ShellSorter<int>().Sort(sortedData);
     }
 }
