@@ -26,5 +26,15 @@ Let's say we have an array `[13, 14, 3, 2]` and we start with an initial gap of 
     * `[2, 3, 13, 14]` (The list is now sorted)
 
 
-... not yet completed
-    
+## Time and space complexity
+
+|              	| Time complexity 	| Space complexity 	|
+|--------------	|-----------------	|------------------	|
+| Worst case   	| O(N^2)          	| O(1)             	|
+| Average case 	| O(N log N)       	| O(1)             	|
+| Best case    	| O(N log N)       	| O(1)             	|
+
+
+## Source code reference
+
+[Shell Sort algorithm implementation](../../Algorithms/SortingAlgorithms/ShellSorter.cs)
