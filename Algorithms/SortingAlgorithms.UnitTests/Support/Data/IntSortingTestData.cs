@@ -46,5 +46,12 @@ internal sealed class IntSortingTestData : TheoryData<IList<int>, IList<int>>
         Add([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // reverse ordered list with only positive elements
         Add([-1, -2, -3, -4, -5, -6, -7, -8, -9, -10], [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]); // reverse ordered list with only negative elements
         Add([5, 4, 3, 2, 1, 0, -1, -2, -3, -4], [-4, -3, -2, -1, 0, 1, 2, 3, 4, 5]); // reverse ordered list with mixed elements
+
+        // Adding large lists
+        IEnumerable<int> largeIntDataSet = Enumerable.Range(1, 16384);
+        List<int> orderedLargeNumbersList = largeIntDataSet.ToList();
+        List<int> reversedLargeNumbersList = largeIntDataSet.Reverse().ToList();
+
+        Add(reversedLargeNumbersList, orderedLargeNumbersList);
     }
 }
