@@ -2,7 +2,7 @@
 
 namespace Cdefgah.SortingAlgorithms.UnitTests;
 
-public class ShellSorterIntTests : IntSorterTestsBase<ShellSorter<int>>
+public sealed class ShellSorterIntTests : IntSorterTestsBase<ShellSorter<int>>
 {
 
 }

@@ -2,7 +2,7 @@
 
 namespace Cdefgah.SortingAlgorithms.UnitTests;
 
-public class MergeSorterIntTests : IntSorterTestsBase<MergeSorter<int>>
+public sealed class MergeSorterIntTests : IntSorterTestsBase<MergeSorter<int>>
 {
 
 }
