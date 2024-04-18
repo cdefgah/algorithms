@@ -79,4 +79,11 @@ public class SortBenchmark
         var sortedData = (int[])array.Clone();
         new ShellSorter<int>().Sort(sortedData);
     }
+
+    [Benchmark]
+    public void TimSortBenchmark()
+    {
+        var sortedData = (int[])array.Clone();
+        new TimSorter<int>().Sort(sortedData);
+    }
 }
