@@ -26,6 +26,9 @@ internal sealed class IntSortingTestData : TheoryData<IList<int>, IList<int>>
         Add([1, 3, 1, 2, 1, 3], [1, 1, 1, 2, 3, 3]); // Adding a list with non-sequential duplicates
         Add([0, -2, 0, 5, 0], [-2, 0, 0, 0, 5]); // Adding a list with zeroes
         Add([2, 4, 6, 8, 10], [2, 4, 6, 8, 10]); // Adding a list with a specific pattern
+        Add([10, 8, 6, 4, 2], [2, 4, 6, 8, 10]); // Adding a list with a specific pattern, in reverse order
+        Add([10, 8, 6, 8, 10], [6, 8, 8, 10, 10]); // Adding a list with a specific down-up pattern
+        Add([2, 4, 6, 8, 10, 8, 6, 4, 2], [2, 2, 4, 4, 6, 6, 8, 8, 10]); // Adding a list with a specific up-down pattern
         Add([2, 2, 2, 3, 3, 3, 1, 1, 1], [1, 1, 1, 2, 2, 2, 3, 3, 3]); // Adding list with sequential positive duplicates
         Add([-2, -2, -2, -3, -3, -3, -1, -1, -1], [-3, -3, -3, -2, -2, -2, -1, -1, -1]); // Adding list with sequential negative duplicates
         Add([-2, 2, -2, 3, -3, 3, 1, -1, 1], [-3, -2, -2, -1, 1, 1, 2, 3, 3]); // Adding list with sequential positive and negative duplicates
