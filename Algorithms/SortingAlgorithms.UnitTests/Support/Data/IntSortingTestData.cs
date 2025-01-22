@@ -52,8 +52,8 @@ internal sealed class IntSortingTestData : TheoryData<IList<int>, IList<int>>
 
         // Adding large lists
         IEnumerable<int> largeIntDataSet = Enumerable.Range(1, 16384);
-        List<int> orderedLargeNumbersList = largeIntDataSet.ToList();
-        List<int> reversedLargeNumbersList = largeIntDataSet.Reverse().ToList();
+        List<int> orderedLargeNumbersList = [.. largeIntDataSet];
+        List<int> reversedLargeNumbersList = [.. largeIntDataSet.Reverse()];
 
         Add(reversedLargeNumbersList, orderedLargeNumbersList);
     }
