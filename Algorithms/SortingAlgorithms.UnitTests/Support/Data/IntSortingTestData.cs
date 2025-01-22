@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SortingAlgorithms.UnitTests.Support.Data;
+﻿namespace SortingAlgorithms.UnitTests.Support.Data;
 
 internal sealed class IntSortingTestData : TheoryData<IList<int>, IList<int>>
 {

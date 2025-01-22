@@ -1,6 +1,4 @@
-﻿using Cdefgah.SortingAlgorithms.Interfaces;
-
-namespace Cdefgah.SortingAlgorithms.Utils;
+﻿namespace Cdefgah.SortingAlgorithms.Utils;
 
 internal static class MergeProvider
 {

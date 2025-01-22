@@ -3,10 +3,8 @@ using Cdefgah.SortingAlgorithms.Utils;
 
 namespace Cdefgah.SortingAlgorithms;
 
-public class TimSorter<T> : ISorter<T> where T : IComparable<T>
+public sealed class TimSorter<T> : ISorter<T> where T : IComparable<T>
 {
-    private static readonly Comparer<T> Comparer = Comparer<T>.Default;
-
     public void Sort(IList<T?> array)
     {
         const int RunSize = 32;

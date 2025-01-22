@@ -1,4 +1,5 @@
-﻿using SE = Cdefgah.SortingAlgorithms.UnitTests.Support.SomeEntity; // Declaring this alias, to make the code more readable
+﻿// Declaring this alias, to make the code more readable
+using SE = Cdefgah.SortingAlgorithms.UnitTests.Support.SomeEntity;
 
 namespace SortingAlgorithms.UnitTests.Support.Data;
 

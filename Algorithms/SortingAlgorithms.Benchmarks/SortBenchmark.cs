@@ -14,7 +14,7 @@ public class SortBenchmark
     public void Setup()
     {
         var random = new Random();
-        array = Enumerable.Range(1, arrayElementsCount).Select(_ => random.Next()).ToArray();
+        array = [.. Enumerable.Range(1, arrayElementsCount).Select(_ => random.Next())];
     }
 
     [Benchmark]

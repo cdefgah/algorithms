@@ -2,7 +2,7 @@
 
 namespace Cdefgah.SortingAlgorithms;
 
-public class ShellSorter<T> : ISorter<T> where T : IComparable<T>
+public sealed class ShellSorter<T> : ISorter<T> where T : IComparable<T>
 {
     public void Sort(IList<T?> array)
     {

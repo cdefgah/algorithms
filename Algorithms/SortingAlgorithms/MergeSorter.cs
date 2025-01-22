@@ -3,7 +3,7 @@ using Cdefgah.SortingAlgorithms.Utils;
 
 namespace Cdefgah.SortingAlgorithms;
 
-public class MergeSorter<T> : ISorter<T> where T : IComparable<T>
+public sealed class MergeSorter<T> : ISorter<T> where T : IComparable<T>
 {
     public void Sort(IList<T?> array)
     {
