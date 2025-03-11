@@ -20,70 +20,70 @@ public class SortBenchmark
     [Benchmark]
     public void BubbleSortBenchmark()
     {
-        var sortedData = (int[])array.Clone();
-        new BubbleSorter<int>().Sort(sortedData);
+        var dataToSort = (int[])array.Clone();
+        new BubbleSorter<int>().Sort(dataToSort);
     }
 
     [Benchmark]
     public void InsertionSortBenchmark()
     {
-        var sortedData = (int[])array.Clone();
-        new InsertionSorter<int>().Sort(sortedData);
+        var dataToSort = (int[])array.Clone();
+        new InsertionSorter<int>().Sort(dataToSort);
     }
 
     [Benchmark]
     public void SelectionSortBenchmark()
     {
-        var sortedData = (int[])array.Clone();
-        new InsertionSorter<int>().Sort(sortedData);
+        var dataToSort = (int[])array.Clone();
+        new InsertionSorter<int>().Sort(dataToSort);
     }
 
     [Benchmark]
     public void RecursiveQuickSortWithLomutoPartitioningSchemaBenchmark()
     {
-        var sortedData = (int[])array.Clone();
-        new QuickSorterLomutoRecursive<int>().Sort(sortedData);
+        var dataToSort = (int[])array.Clone();
+        new QuickSorterLomutoRecursive<int>().Sort(dataToSort);
     }
 
     [Benchmark]
     public void NonRecursiveQuickSortWithLomutoPartitioningSchemaBenchmark()
     {
-        var sortedData = (int[])array.Clone();
-        new QuickSorterLomutoNonRecursive<int>().Sort(sortedData);
+        var dataToSort = (int[])array.Clone();
+        new QuickSorterLomutoNonRecursive<int>().Sort(dataToSort);
     }
 
     [Benchmark]
     public void RecursiveQuickSortWithHoarePartitioningSchemaBenchmark()
     {
-        var sortedData = (int[])array.Clone();
-        new QuickSorterHoareRecursive<int>().Sort(sortedData);
+        var dataToSort = (int[])array.Clone();
+        new QuickSorterHoareRecursive<int>().Sort(dataToSort);
     }
 
     [Benchmark]
     public void NonRecursiveQuickSortWithHoarePartitioningSchemaBenchmark()
     {
-        var sortedData = (int[])array.Clone();
-        new QuickSorterHoareNonRecursive<int>().Sort(sortedData);
+        var dataToSort = (int[])array.Clone();
+        new QuickSorterHoareNonRecursive<int>().Sort(dataToSort);
     }
 
     [Benchmark]
     public void MergeSortBenchmark()
     {
-        var sortedData = (int[])array.Clone();
-        new MergeSorter<int>().Sort(sortedData);
+        var dataToSort = (int[])array.Clone();
+        new MergeSorter<int>().Sort(dataToSort);
     }
 
     [Benchmark]
     public void ShellSortBenchmark()
     {
-        var sortedData = (int[])array.Clone();
-        new ShellSorter<int>().Sort(sortedData);
+        var dataToSort = (int[])array.Clone();
+        new ShellSorter<int>().Sort(dataToSort);
     }
 
     [Benchmark]
     public void TimSortBenchmark()
     {
-        var sortedData = (int[])array.Clone();
-        new TimSorter<int>().Sort(sortedData);
+        var dataToSort = (int[])array.Clone();
+        new TimSorter<int>().Sort(dataToSort);
     }
 }

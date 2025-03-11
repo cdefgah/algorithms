@@ -11,8 +11,8 @@ public sealed class SelectionSorter<T> : ISorter<T> where T : IComparable<T>
 
         for (int i = 0; i < n - 1; i++)
         {
-            // Find the minimal element in unsorted (sub)-array and keep its index
-            // assume the minimal element is the first element.
+            // Find the smallest element in an unsorted(sub-)array
+            // and keep its index, assuming that the smallest element is the first element.
             int minValueIndex = i;
 
             for (int j = i + 1; j < n; j++)
@@ -23,8 +23,8 @@ public sealed class SelectionSorter<T> : ISorter<T> where T : IComparable<T>
                 }
             }
 
-            // Swap the found minimum element 
-            // with the first element in unsorted (sub)-array.
+
+            // Swap the smallest element found with the first element in the unsorted (sub)array.
             if (minValueIndex != i)
             {
                 (array[i], array[minValueIndex]) = (array[minValueIndex], array[i]);

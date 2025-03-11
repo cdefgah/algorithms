@@ -7,17 +7,17 @@ public sealed class TimSorter<T> : ISorter<T> where T : IComparable<T>
 {
     public void Sort(IList<T?> array)
     {
-        const int RunSize = 32;
+        const int runSize = 32;
 
         var helper = new T?[array.Count];
 
         int n = array.Count;
-        for (int i = 0; i < n; i += RunSize)
+        for (int i = 0; i < n; i += runSize)
         {
-            InsertionSortProvider.InsertionSort(array, i, Math.Min((i + RunSize - 1), (n - 1)));
+            InsertionSortProvider.InsertionSort(array, i, Math.Min((i + runSize - 1), (n - 1)));
         }
 
-        for (int size = RunSize; size < n; size = 2 * size)
+        for (int size = runSize; size < n; size = 2 * size)
         {
             for (int left = 0; left < n; left += 2 * size)
             {
