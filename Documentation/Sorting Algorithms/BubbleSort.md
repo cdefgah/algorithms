@@ -14,50 +14,6 @@ Here is the video of the bubble sorting example:
 | Best case    	| O(N)            	| O(1)             	|
 
 
-Below is the C# implementation of the bubble sorting algorithm:
-
-```c#
-public sealed class BubbleSorter<T> : ISorter<T> where T : IComparable<T>
-{
-    public void Sort(IList<T?> array)
-    {
-        int n = array.Count;
-        Comparer<T> comparer = Comparer<T>.Default;
-
-        for (int i = 0; i < n; i++)
-        {
-            bool swapPerformed = false;
-
-            for (int j = 0; j < n - i - 1; j++)
-            {
-                if (comparer.Compare(array[j], array[j + 1]) > 0)
-                {
-                    (array[j + 1], array[j]) = (array[j], array[j + 1]);
-                    swapPerformed = true;
-                }
-            }
-
-            // if there were no swaps, array is sorted
-            if (!swapPerformed)
-            {
-                break;
-            }
-        }
-    }
-}
-```
-
-We use `swapPerformed` to check if there were any swaps. If there were no swaps, it means that the array is already sorted and we should break the loop.
-
-The `ISorter<T>` interface is declared as follows:
-
-```c#
-public interface ISorter<T> where T : IComparable<T>
-{
-    void Sort(IList<T?> array);
-}
-```
-
 ## Source code reference
 
 [Bubble Sort algorithm implementation](../../Algorithms/SortingAlgorithms/BubbleSorter.cs)

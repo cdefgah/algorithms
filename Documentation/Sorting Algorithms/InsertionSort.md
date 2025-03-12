@@ -14,45 +14,6 @@ Here is the video of the insertion sorting example:
 | Best case    	| O(N)            	| O(1)             	|
 
 
-Below is the C# implementation of the insertion sorting algorithm:
-
-```c#
-public sealed class InsertionSorter<T> : ISorter<T> where T : IComparable<T>
-{
-    public void Sort(IList<T?> array)
-    {
-        Comparer<T> comparer = Comparer<T>.Default;
-
-        // We start with the second element with i = 1, because we compare the current element with the previous one.
-        for (int i = 1; i < array.Count; i++)
-        {
-            T? currentValue = array[i];
-            int index = i;
-
-            // Find the position where currentValue should be inserted.
-            while (index > 0 && comparer.Compare(array[index - 1], currentValue) > 0)
-            {
-                // Shift values to the right.
-                array[index] = array[index - 1];
-                index--;
-            }
-
-            // Insert currentValue at the found position.
-            array[index] = currentValue;
-        }
-    }
-}
-```
-
-The `ISorter<T>` interface is declared as follows:
-
-```c#
-public interface ISorter<T> where T : IComparable<T>
-{
-    void Sort(IList<T?> array);
-}
-```
-
 ## Source code reference
 
 [Insertion Sort algorithm implementation](../../Algorithms/SortingAlgorithms/InsertionSorter.cs)
