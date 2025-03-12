@@ -7,6 +7,8 @@ Here is the video of the selection sorting example:
 ![Insertion Sort](./Media/selection-sort.gif)
 
 
+## Time and space complexity
+
 |              	| Time complexity 	| Space complexity 	|
 |--------------	|-----------------	|------------------	|
 | Worst case   	| O(N^2)          	| O(1)             	|

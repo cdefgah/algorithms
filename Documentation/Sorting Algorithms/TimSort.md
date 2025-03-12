@@ -8,6 +8,7 @@ TimSort works as follows:
 * Each run is sorted using insertion sort individually.
 * These sorted runs are then merged together using an algorithm similar to merge sort.
 
+
 ## Time and space complexity
 
 |              	| Time complexity 	| Space complexity 	|

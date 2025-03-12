@@ -7,6 +7,8 @@ Here is the video of the bubble sorting example:
 ![Bubble Sort](./Media/bubble-sort.gif)
 
 
+## Time and space complexity
+
 |              	| Time complexity 	| Space complexity 	|
 |--------------	|-----------------	|------------------	|
 | Worst case   	| O(N^2)          	| O(1)             	|
