@@ -6,7 +6,6 @@ Here is the video of the insertion sorting example:
 
 ![Insertion Sort](./Media/insertion-sort.gif)
 
-
 ## Time and space complexity
 
 |              	| Time complexity 	| Space complexity 	|
