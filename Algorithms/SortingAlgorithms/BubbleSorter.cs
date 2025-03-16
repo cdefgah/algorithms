@@ -18,6 +18,8 @@ public sealed class BubbleSorter<T> : ISorter<T> where T : IComparable<T>
 
     public void Sort(IList<T?> array)
     {
+        ArgumentNullException.ThrowIfNull(array);
+
         int n = array.Count;
 
         for (int i = 0; i < n; i++)

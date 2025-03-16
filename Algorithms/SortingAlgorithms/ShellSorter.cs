@@ -18,6 +18,8 @@ public sealed class ShellSorter<T> : ISorter<T> where T : IComparable<T>
 
     public void Sort(IList<T?> array)
     {
+        ArgumentNullException.ThrowIfNull(array);
+
         for (int interval = array.Count / 2; interval > 0; interval /= 2)
         {
             for (int i = interval; i < array.Count; i++)

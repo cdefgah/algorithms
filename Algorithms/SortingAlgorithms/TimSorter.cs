@@ -19,8 +19,9 @@ public sealed class TimSorter<T> : ISorter<T> where T : IComparable<T>
 
     public void Sort(IList<T?> array)
     {
-        const int runSize = 32;
+        ArgumentNullException.ThrowIfNull(array);
 
+        const int runSize = 32;
         var helper = new T?[array.Count];
 
         int n = array.Count;

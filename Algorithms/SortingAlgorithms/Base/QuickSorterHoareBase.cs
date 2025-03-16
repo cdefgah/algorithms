@@ -18,6 +18,7 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
 
     public void Sort(IList<T?> array)
     {
+        ArgumentNullException.ThrowIfNull(array);
         QuickSort(array, 0, array.Count - 1);
     }
 
@@ -25,6 +26,8 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
 
     protected int Partition(IList<T?> array, int low, int high)
     {
+        ArgumentNullException.ThrowIfNull(array);
+
         T? pivot = array[(low + high) / 2];
         int i = low;
         int j = high;

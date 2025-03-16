@@ -15,6 +15,8 @@ internal static class InsertionSortProvider
     /// <param name="comparer">Actual comparer to be used for sorting.</param>
     public static void InsertionSort<T>(IList<T?> array, int startIndex, int endIndex, IComparer<T> comparer) where T : IComparable<T>
     {
+        ArgumentNullException.ThrowIfNull(array);
+
         // We start with the second element with i = 1, because we compare the current element with the previous one.
         for (int i = startIndex; i <= endIndex; i++)
         {

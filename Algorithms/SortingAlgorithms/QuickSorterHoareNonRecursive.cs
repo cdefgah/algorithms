@@ -16,8 +16,9 @@ public sealed class QuickSorterHoareNonRecursive<T> : QuickSorterHoareBase<T> wh
 
     protected override void QuickSort(IList<T?> array, int low, int high)
     {
-        Stack<(int, int)> stack = new();
+        ArgumentNullException.ThrowIfNull(array);
 
+        Stack<(int, int)> stack = new();
         stack.Push((low, high));
 
         while (stack.Count > 0)

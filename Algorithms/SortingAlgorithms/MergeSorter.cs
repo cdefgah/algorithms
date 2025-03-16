@@ -19,8 +19,9 @@ public sealed class MergeSorter<T> : ISorter<T> where T : IComparable<T>
 
     public void Sort(IList<T?> array)
     {
-        var helper = new T?[array.Count];
+        ArgumentNullException.ThrowIfNull(array);
 
+        var helper = new T?[array.Count];
         MergeSort(array, helper, 0, array.Count - 1);
     }
 

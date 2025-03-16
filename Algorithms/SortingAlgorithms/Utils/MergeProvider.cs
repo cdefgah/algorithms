@@ -9,6 +9,10 @@ internal static class MergeProvider
                                 int high, 
                                 IComparer<T> comparer) where T : IComparable<T>
     {
+        ArgumentNullException.ThrowIfNull(array);
+        ArgumentNullException.ThrowIfNull(helper);
+        ArgumentNullException.ThrowIfNull(comparer);
+
         for (int i = low; i <= high; i++)
         {
             helper[i] = array[i];

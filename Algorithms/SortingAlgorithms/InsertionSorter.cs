@@ -19,6 +19,7 @@ public sealed class InsertionSorter<T> : ISorter<T> where T : IComparable<T>
 
     public void Sort(IList<T?> array)
     {
+        ArgumentNullException.ThrowIfNull(array);
         InsertionSortProvider.InsertionSort(array, 0, array.Count - 1, comparer);
     }
 }

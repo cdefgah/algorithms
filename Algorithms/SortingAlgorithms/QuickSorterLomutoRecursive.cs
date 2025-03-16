@@ -16,6 +16,8 @@ public sealed class QuickSorterLomutoRecursive<T> : QuickSorterLomutoBase<T> whe
 
     protected override void QuickSort(IList<T?> array, int low, int high)
     {
+        ArgumentNullException.ThrowIfNull(array);
+
         if (low < high)
         {
             int pivotIndex = Partition(array, low, high);

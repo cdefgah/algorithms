@@ -16,6 +16,8 @@ public sealed class QuickSorterHoareRecursive<T> : QuickSorterHoareBase<T> where
 
     protected override void QuickSort(IList<T?> array, int low, int high)
     {
+        ArgumentNullException.ThrowIfNull(array);
+
         if (low < high)
         {
             var pivotIndex = Partition(array, low, high);
