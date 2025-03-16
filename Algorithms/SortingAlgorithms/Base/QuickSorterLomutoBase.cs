@@ -4,6 +4,19 @@ namespace Cdefgah.SortingAlgorithms.Base;
 
 public abstract class QuickSorterLomutoBase<T> : ISorter<T> where T : IComparable<T>
 {
+    private readonly IComparer<T> comparer;
+
+    protected QuickSorterLomutoBase()
+    {
+        comparer = Comparer<T>.Default;
+    }
+
+    protected QuickSorterLomutoBase(IComparer<T>? comparer = null)
+    {
+        this.comparer = comparer ?? Comparer<T>.Default;
+    }
+
+
     public void Sort(IList<T?> array)
     {
         QuickSort(array, 0, array.Count - 1);
@@ -15,8 +28,6 @@ public abstract class QuickSorterLomutoBase<T> : ISorter<T> where T : IComparabl
     {
         T? pivot = array[high];
         int i = (low - 1);
-
-        Comparer<T> comparer = Comparer<T>.Default;
 
         for (int j = low; j < high; j++)
         {

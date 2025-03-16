@@ -5,6 +5,18 @@ namespace Cdefgah.SortingAlgorithms;
 
 public sealed class MergeSorter<T> : ISorter<T> where T : IComparable<T>
 {
+    private readonly IComparer<T> comparer;
+
+    public MergeSorter()
+    {
+        comparer = Comparer<T>.Default;
+    }
+
+    public MergeSorter(IComparer<T>? comparer = null)
+    {
+        this.comparer = comparer ?? Comparer<T>.Default;
+    }
+
     public void Sort(IList<T?> array)
     {
         var helper = new T?[array.Count];
@@ -12,7 +24,7 @@ public sealed class MergeSorter<T> : ISorter<T> where T : IComparable<T>
         MergeSort(array, helper, 0, array.Count - 1);
     }
 
-    private static void MergeSort(IList<T?> array, IList<T?> helper, int low, int high)
+    private void MergeSort(IList<T?> array, IList<T?> helper, int low, int high)
     {
         if (low < high)
         {
@@ -20,7 +32,7 @@ public sealed class MergeSorter<T> : ISorter<T> where T : IComparable<T>
             MergeSort(array, helper, low, middle);
             MergeSort(array, helper, middle + 1, high);
 
-            MergeProvider.Merge(array, helper, low, middle, high);
+            MergeProvider.Merge(array, helper, low, middle, high, comparer);
         }
     } 
 }

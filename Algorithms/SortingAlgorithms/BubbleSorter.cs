@@ -4,10 +4,21 @@ namespace Cdefgah.SortingAlgorithms;
 
 public sealed class BubbleSorter<T> : ISorter<T> where T : IComparable<T>
 {
+    private readonly IComparer<T> comparer;
+
+    public BubbleSorter()
+    {
+        comparer = Comparer<T>.Default;
+    }
+
+    public BubbleSorter(IComparer<T>? comparer = null)
+    {
+        this.comparer = comparer ?? Comparer<T>.Default;
+    }
+
     public void Sort(IList<T?> array)
     {
         int n = array.Count;
-        Comparer<T> comparer = Comparer<T>.Default;
 
         for (int i = 0; i < n; i++)
         {

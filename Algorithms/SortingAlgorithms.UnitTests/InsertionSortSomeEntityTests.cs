@@ -5,5 +5,8 @@ namespace Cdefgah.SortingAlgorithms.UnitTests;
 
 public sealed class InsertionSortSomeEntityTests : SomeEntitySorterTestsBase<InsertionSorter<SomeEntity>>
 {
+    public InsertionSortSomeEntityTests() : base(comparer => new(comparer))
+    {
 
+    }
 }

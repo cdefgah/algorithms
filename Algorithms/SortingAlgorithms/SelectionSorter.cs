@@ -4,10 +4,21 @@ namespace Cdefgah.SortingAlgorithms;
 
 public sealed class SelectionSorter<T> : ISorter<T> where T : IComparable<T>
 {
+    private readonly IComparer<T> comparer;
+
+    public SelectionSorter()
+    {
+        comparer = Comparer<T>.Default;
+    }
+
+    public SelectionSorter(IComparer<T>? comparer = null)
+    {
+        this.comparer = comparer ?? Comparer<T>.Default;
+    }
+
     public void Sort(IList<T?> array)
     {
         int n = array.Count;
-        Comparer<T> comparer = Comparer<T>.Default;
 
         for (int i = 0; i < n - 1; i++)
         {

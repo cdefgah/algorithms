@@ -5,5 +5,8 @@ namespace Cdefgah.SortingAlgorithms.UnitTests;
 
 public sealed class TimSorterSomeEntityTests : SomeEntitySorterTestsBase<TimSorter<SomeEntity>>
 {
-
+    public TimSorterSomeEntityTests() : base(comparer => new(comparer))
+    {
+        
+    }
 }

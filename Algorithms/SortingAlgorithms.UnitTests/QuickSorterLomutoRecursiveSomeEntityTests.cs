@@ -5,4 +5,8 @@ namespace Cdefgah.SortingAlgorithms.UnitTests;
 
 public sealed class QuickSorterLomutoRecursiveSomeEntityTests : SomeEntitySorterTestsBase<QuickSorterLomutoRecursive<SomeEntity>>
 {
+    public QuickSorterLomutoRecursiveSomeEntityTests() : base(comparer => new(comparer))
+    {
+        
+    }
 }

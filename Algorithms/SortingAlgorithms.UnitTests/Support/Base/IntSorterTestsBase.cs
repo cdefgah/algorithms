@@ -4,19 +4,23 @@ using SortingAlgorithms.UnitTests.Support.Data;
 
 namespace Cdefgah.SortingAlgorithms.UnitTests.Support.Base;
 
-public abstract class IntSorterTestsBase<TSorter> where TSorter : ISorter<int>, new()
+public abstract class IntSorterTestsBase<TSorter> where TSorter : ISorter<int>
 {
-    private readonly TSorter sorter;
+    protected readonly Func<IComparer<int>, TSorter> CreateSorter;
 
-    public IntSorterTestsBase()
+    protected IntSorterTestsBase(Func<IComparer<int>, TSorter> sorterFactory)
     {
-        sorter = new TSorter();
+        CreateSorter = sorterFactory;
     }
 
     [Theory]
     [ClassData(typeof(IntSortingTestData))]
-    public void SortingTest(IList<int> initialArray, IList<int> expectedSortedArray)
+    public void SortingTest(
+        IComparer<int> comparer,
+        IList<int> initialArray,
+        IList<int> expectedSortedArray)
     {
+        var sorter = CreateSorter(comparer);
         sorter.Sort(initialArray);
         Assert.Equal(expectedSortedArray, initialArray);
     }

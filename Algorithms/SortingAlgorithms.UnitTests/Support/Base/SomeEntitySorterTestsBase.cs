@@ -6,17 +6,20 @@ namespace Cdefgah.SortingAlgorithms.UnitTests.Support.Base;
 
 public abstract class SomeEntitySorterTestsBase <TSorter> where TSorter : ISorter<SomeEntity>, new()
 {
-    private readonly TSorter sorter;
+    protected readonly Func<IComparer<SomeEntity>, TSorter> CreateSorter;
 
-    public SomeEntitySorterTestsBase()
+    protected SomeEntitySorterTestsBase(Func<IComparer<SomeEntity>, TSorter> sorterFactory)
     {
-        sorter = new TSorter();
+        CreateSorter = sorterFactory;
     }
 
     [Theory]
     [ClassData(typeof(SomeEntitySorterTestData))]
-    public void SortingTest(IList<SomeEntity?> initialArray, IList<SomeEntity?> expectedSortedArray)
+    public void SortingTest(IComparer<SomeEntity> comparer, 
+                            IList<SomeEntity?> initialArray, 
+                            IList<SomeEntity?> expectedSortedArray)
     {
+        var sorter = CreateSorter(comparer);
         sorter.Sort(initialArray);
         Assert.Equal(expectedSortedArray, initialArray);
     }

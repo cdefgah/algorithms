@@ -2,7 +2,12 @@
 
 internal static class MergeProvider
 {
-    public static void Merge<T>(IList<T?> array, IList<T?> helper, int low, int middle, int high) where T : IComparable<T>
+    public static void Merge<T>(IList<T?> array, 
+                                IList<T?> helper, 
+                                int low, 
+                                int middle, 
+                                int high, 
+                                IComparer<T> comparer) where T : IComparable<T>
     {
         for (int i = low; i <= high; i++)
         {
@@ -12,8 +17,6 @@ internal static class MergeProvider
         int helperLeft = low;
         int helperRight = middle + 1;
         int current = low;
-
-        Comparer<T> comparer = Comparer<T>.Default;
 
         while (helperLeft <= middle && helperRight <= high)
         {
