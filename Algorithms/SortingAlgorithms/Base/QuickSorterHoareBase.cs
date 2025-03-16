@@ -11,13 +11,13 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
         this.comparer = comparer ?? Comparer<T>.Default;
     }
 
-    public void Sort(IList<T?> array)
+    public void Sort(IList<T?> collection)
     {
-        ArgumentNullException.ThrowIfNull(array);
-        QuickSort(array, 0, array.Count - 1);
+        ArgumentNullException.ThrowIfNull(collection);
+        QuickSort(collection, 0, collection.Count - 1);
     }
 
-    protected abstract void QuickSort(IList<T?> array, int low, int high);
+    protected abstract void QuickSort(IList<T?> collection, int low, int high);
 
     protected int Partition(IList<T?> array, int low, int high)
     {

@@ -3,26 +3,41 @@ using Cdefgah.SortingAlgorithms.Utils;
 
 namespace Cdefgah.SortingAlgorithms;
 
+/// <summary>
+/// Performs MergeSort on the specified collection.
+/// </summary>
+/// <typeparam name="T">Collection element type.</typeparam>
 public sealed class MergeSorter<T> : ISorter<T> where T : IComparable<T>
 {
     private readonly IComparer<T> comparer;
 
+    /// <summary>
+    /// Default constructor, uses default comparer for the provided type.
+    /// </summary>
     public MergeSorter() : this(null)
     {
         
     }
 
+    /// <summary>
+    /// Constructor.
+    /// </summary>
+    /// <param name="comparer">A custom comparer to be used for sorting.</param>
     public MergeSorter(IComparer<T>? comparer = null)
     {
         this.comparer = comparer ?? Comparer<T>.Default;
     }
 
-    public void Sort(IList<T?> array)
+    /// <summary>
+    /// Performs the sorting. Sorting is done in-place.
+    /// </summary>
+    /// <param name="collection">The collection to sort.</param>
+    public void Sort(IList<T?> collection)
     {
-        ArgumentNullException.ThrowIfNull(array);
+        ArgumentNullException.ThrowIfNull(collection);
 
-        var helper = new T?[array.Count];
-        MergeSort(array, helper, 0, array.Count - 1);
+        var helper = new T?[collection.Count];
+        MergeSort(collection, helper, 0, collection.Count - 1);
     }
 
     private void MergeSort(IList<T?> array, IList<T?> helper, int low, int high)

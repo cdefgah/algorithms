@@ -1,21 +1,24 @@
 ﻿namespace Cdefgah.SortingAlgorithms.Utils;
 
+/// <summary>
+/// Provides MergeSort functionality for various classes, that use this functionality.
+/// </summary>
 internal static class MergeProvider
 {
-    public static void Merge<T>(IList<T?> array, 
+    public static void Merge<T>(IList<T?> collection, 
                                 IList<T?> helper, 
                                 int low, 
                                 int middle, 
                                 int high, 
                                 IComparer<T> comparer) where T : IComparable<T>
     {
-        ArgumentNullException.ThrowIfNull(array);
+        ArgumentNullException.ThrowIfNull(collection);
         ArgumentNullException.ThrowIfNull(helper);
         ArgumentNullException.ThrowIfNull(comparer);
 
         for (int i = low; i <= high; i++)
         {
-            helper[i] = array[i];
+            helper[i] = collection[i];
         }
 
         int helperLeft = low;
@@ -26,12 +29,12 @@ internal static class MergeProvider
         {
             if (comparer.Compare(helper[helperLeft], helper[helperRight]) <= 0)
             {
-                array[current] = helper[helperLeft];
+                collection[current] = helper[helperLeft];
                 helperLeft++;
             }
             else
             {
-                array[current] = helper[helperRight];
+                collection[current] = helper[helperRight];
                 helperRight++;
             }
 
@@ -41,7 +44,7 @@ internal static class MergeProvider
         int remaining = middle - helperLeft;
         for (int i = 0; i <= remaining; i++)
         {
-            array[current + i] = helper[helperLeft + i];
+            collection[current + i] = helper[helperLeft + i];
         }
     }
 }

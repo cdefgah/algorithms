@@ -18,6 +18,13 @@ public class SortBenchmark
     }
 
     [Benchmark]
+    public void StandardArraySortSortBenchmark()
+    {
+        var dataToSort = (int[])array.Clone();
+        Array.Sort(dataToSort);
+    }
+
+    [Benchmark]
     public void BubbleSortBenchmark()
     {
         var dataToSort = (int[])array.Clone();

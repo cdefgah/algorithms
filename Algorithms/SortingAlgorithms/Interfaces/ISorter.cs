@@ -2,5 +2,5 @@
 
 public interface ISorter<T> where T : IComparable<T>
 {
-    void Sort(IList<T?> array);
+    void Sort(IList<T?> collection);
 }
