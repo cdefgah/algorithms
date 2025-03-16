@@ -4,7 +4,7 @@ namespace Cdefgah.SortingAlgorithms;
 
 public sealed class QuickSorterHoareRecursive<T> : QuickSorterHoareBase<T> where T : IComparable<T>
 {
-    public QuickSorterHoareRecursive() : base()
+    public QuickSorterHoareRecursive() : this(null)
     {
 
     }

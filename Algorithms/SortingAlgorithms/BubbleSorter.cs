@@ -6,9 +6,9 @@ public sealed class BubbleSorter<T> : ISorter<T> where T : IComparable<T>
 {
     private readonly IComparer<T> comparer;
 
-    public BubbleSorter()
+    public BubbleSorter() : this(null)
     {
-        comparer = Comparer<T>.Default;
+        
     }
 
     public BubbleSorter(IComparer<T>? comparer = null)

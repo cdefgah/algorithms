@@ -7,9 +7,9 @@ public sealed class TimSorter<T> : ISorter<T> where T : IComparable<T>
 {
     private readonly IComparer<T> comparer;
 
-    public TimSorter()
+    public TimSorter() : this(null)
     {
-        comparer = Comparer<T>.Default;
+        
     }
 
     public TimSorter(IComparer<T>? comparer = null)

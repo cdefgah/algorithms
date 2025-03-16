@@ -6,9 +6,9 @@ public sealed class ShellSorter<T> : ISorter<T> where T : IComparable<T>
 {
     private readonly IComparer<T> comparer;
 
-    public ShellSorter()
+    public ShellSorter() : this(null)
     {
-        comparer = Comparer<T>.Default;
+        
     }
 
     public ShellSorter(IComparer<T>? comparer = null)

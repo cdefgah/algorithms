@@ -6,9 +6,9 @@ public sealed class SelectionSorter<T> : ISorter<T> where T : IComparable<T>
 {
     private readonly IComparer<T> comparer;
 
-    public SelectionSorter()
+    public SelectionSorter() : this(null)
     {
-        comparer = Comparer<T>.Default;
+        
     }
 
     public SelectionSorter(IComparer<T>? comparer = null)

@@ -4,7 +4,7 @@ namespace Cdefgah.SortingAlgorithms;
 
 public sealed class QuickSorterLomutoRecursive<T> : QuickSorterLomutoBase<T> where T : IComparable<T>
 {
-    public QuickSorterLomutoRecursive() : base()
+    public QuickSorterLomutoRecursive() : this(null)
     {
 
     }

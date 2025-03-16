@@ -6,16 +6,10 @@ public abstract class QuickSorterLomutoBase<T> : ISorter<T> where T : IComparabl
 {
     private readonly IComparer<T> comparer;
 
-    protected QuickSorterLomutoBase()
-    {
-        comparer = Comparer<T>.Default;
-    }
-
     protected QuickSorterLomutoBase(IComparer<T>? comparer = null)
     {
         this.comparer = comparer ?? Comparer<T>.Default;
     }
-
 
     public void Sort(IList<T?> array)
     {

@@ -7,9 +7,9 @@ public sealed class MergeSorter<T> : ISorter<T> where T : IComparable<T>
 {
     private readonly IComparer<T> comparer;
 
-    public MergeSorter()
+    public MergeSorter() : this(null)
     {
-        comparer = Comparer<T>.Default;
+        
     }
 
     public MergeSorter(IComparer<T>? comparer = null)

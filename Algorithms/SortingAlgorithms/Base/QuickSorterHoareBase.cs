@@ -6,11 +6,6 @@ public abstract class QuickSorterHoareBase<T> : ISorter<T> where T : IComparable
 {
     private readonly IComparer<T> comparer;
 
-    protected QuickSorterHoareBase()
-    {
-        comparer = Comparer<T>.Default;
-    }
-
     protected QuickSorterHoareBase(IComparer<T>? comparer = null)
     {
         this.comparer = comparer ?? Comparer<T>.Default;
