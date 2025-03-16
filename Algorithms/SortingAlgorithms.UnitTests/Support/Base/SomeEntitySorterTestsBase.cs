@@ -16,11 +16,25 @@ public abstract class SomeEntitySorterTestsBase <TSorter> where TSorter : ISorte
     [Theory]
     [ClassData(typeof(SomeEntitySorterTestData))]
     public void SortingTest(IComparer<SomeEntity> comparer, 
-                            IList<SomeEntity?> initialArray, 
-                            IList<SomeEntity?> expectedSortedArray)
+                            IList<SomeEntity?> unsortedCollection, 
+                            IList<SomeEntity?> expectedSortedCollection)
     {
+        var unsortedCollectionCopy = unsortedCollection.ToArray();
+        var expectedSortedCollectionCopy = expectedSortedCollection.ToArray();
+        
         var sorter = CreateSorter(comparer);
-        sorter.Sort(initialArray);
-        Assert.Equal(expectedSortedArray, initialArray);
+        sorter.Sort(unsortedCollectionCopy);
+        Assert.Equal(expectedSortedCollectionCopy, unsortedCollectionCopy);
+    }
+
+    [Fact]
+    public void TestAttemptToSortNullArrayThrowsCorrectException()
+    {
+        var sorter = CreateSorter(Comparer<SomeEntity>.Default);
+        IList<SomeEntity>? nullArray = null;
+
+#pragma warning disable CS8604 // Possible null reference argument.
+        Assert.Throws<ArgumentNullException>(() => sorter.Sort(nullArray));
+#pragma warning restore CS8604 // Possible null reference argument.
     }
 }

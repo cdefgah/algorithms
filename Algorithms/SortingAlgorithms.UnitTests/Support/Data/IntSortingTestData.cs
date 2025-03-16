@@ -166,19 +166,11 @@ internal sealed class IntSortingTestData : TheoryData<IComparer<int>?, IList<int
         Add(reverseIntComparer, [5, 4, 3, 2, 1, 0, -1, -2, -3, -4], [5, 4, 3, 2, 1, 0, -1, -2, -3, -4]);
 
         // Adding large lists
-        var (orderedLargeNumbersList, reversedLargeNumbersList) = GetLargeOrderedAndReversedNumbersList();
-        Add(null, reversedLargeNumbersList, orderedLargeNumbersList);
-
-        (orderedLargeNumbersList, reversedLargeNumbersList) = GetLargeOrderedAndReversedNumbersList();
-        Add(reverseIntComparer, orderedLargeNumbersList, reversedLargeNumbersList);
-    }
-
-    private static (List<int> orderedDataSet, List<int> reversedDataSet) GetLargeOrderedAndReversedNumbersList()
-    {
         IEnumerable<int> largeIntDataSet = Enumerable.Range(1, 16384);
         List<int> orderedLargeNumbersList = [.. largeIntDataSet];
         List<int> reversedLargeNumbersList = [.. largeIntDataSet.Reverse()];
 
-        return (orderedLargeNumbersList, reversedLargeNumbersList);
+        Add(null, reversedLargeNumbersList, orderedLargeNumbersList);
+        Add(reverseIntComparer, orderedLargeNumbersList, reversedLargeNumbersList);
     }
 }

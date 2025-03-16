@@ -13,6 +13,7 @@ public abstract class QuickSorterLomutoBase<T> : ISorter<T> where T : IComparabl
 
     public void Sort(IList<T?> array)
     {
+        ArgumentNullException.ThrowIfNull(array);
         QuickSort(array, 0, array.Count - 1);
     }
 
@@ -20,6 +21,8 @@ public abstract class QuickSorterLomutoBase<T> : ISorter<T> where T : IComparabl
 
     protected virtual int Partition(IList<T?> array, int low, int high)
     {
+        ArgumentNullException.ThrowIfNull(array);
+
         T? pivot = array[high];
         int i = (low - 1);
 
