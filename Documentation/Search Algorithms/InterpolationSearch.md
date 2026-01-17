@@ -1,2 +1,2 @@
-# Binary Search Algorithm
+# Interpolation Search Algorithm
 
